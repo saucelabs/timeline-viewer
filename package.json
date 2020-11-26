@@ -14,7 +14,8 @@
     "generate-sw-dev": "npm run generate-sw && npm run checkout-sw",
     "generate-sw-prod": "npm run generate-sw && npm run commit-sw",
     "checkout-sw": "git checkout docs/service-worker.js",
-    "commit-sw": "if [ -n \"$(git status --porcelain -uno)\" ]; then git commit -am \"generate service-worker\"; fi"
+    "commit-sw": "if [ -n \"$(git status --porcelain -uno)\" ]; then git commit -am \"generate service-worker\"; fi",
+    "deploy": "npm run generate-sw && gh-pages -d docs"
   },
   "author": "Paul Irish",
   "license": "Apache-2.0",
@@ -23,6 +24,7 @@
     "eslint": "^6.8.0",
     "eslint-config-google": "^0.14.0",
     "eslint-plugin-cypress": "^2.10.3",
+    "gh-pages": "^3.1.0",
     "http-server": "^0.12.1",
     "opn-cli": "^5.0.0",
     "pre-push": "^0.1.1",
